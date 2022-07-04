@@ -31,7 +31,7 @@ func NewRunningSpeed(deviceName string) *Sensor {
 			// Speed
 			binary.LittleEndian.PutUint16(out[1:3], uint16(float32(in.Speed)*0.256))
 			// Cadance 6x multiplier for more realistic running
-			copy(out[3:], []byte{byte(in.Spm * 6)})
+			copy(out[3:], []byte{byte(in.Spm)})
 			return out
 		},
 	}
